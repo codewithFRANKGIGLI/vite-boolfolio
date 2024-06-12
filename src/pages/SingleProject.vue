@@ -28,7 +28,7 @@ export default {
             <h1>{{ project.name }}</h1>
 
             <div v-if="project.cover_img">
-                <img :src="`http://127.0.0.1:8000/storage/${project.cover_img}`" :alt="project.name">
+                <img :src="`http://127.0.0.1:8000/storage/${project.cover_img}`" :alt="project.name" style="width: 20rem;">
             </div>
 
             <p v-if="project.summary">

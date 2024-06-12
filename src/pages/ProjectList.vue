@@ -7,7 +7,7 @@
                 </div>
             </div>
             <nav aria-label="Page navigation example">
-            <ul class="pagination">
+                <ul class="pagination">
                 <li v-if="prevPageUrl" class="page-item">
                     <a class="page-link" @click="getProjects(currentPage - 1)">Previous</a>
                 </li>
@@ -15,7 +15,7 @@
                     <a class="page-link" @click="getProjects(currentPage + 1)">Next</a>
                 </li>
             </ul>
-        </nav>
+            </nav>
         </div>
     </div>
 </template>
@@ -43,12 +43,12 @@ export default {
                     page: pageNumber
                 }
             })
-            .then((response) => {
-                this.projects = response.data.results.data;
-                this.currentPage = response.data.results.current_page;
-                this.prevPageUrl = response.data.results.prev_page_url;
-                this.nextPageUrl = response.data.results.next_page_url;
-            });
+                .then((response) => {
+                    this.projects = response.data.results;
+                    this.currentPage = response.data.results.current_page;
+                    this.prevPageUrl = response.data.results.prev_page_url;
+                    this.nextPageUrl = response.data.results.next_page_url;
+                });
         }
     },
     mounted() {
